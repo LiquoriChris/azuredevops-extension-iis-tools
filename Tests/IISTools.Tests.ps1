@@ -7,3 +7,14 @@ Describe 'Disable-IISApplication' {
         Test-Path -Path TestDrive:\app_offlne.htm -PathType Leaf |Should Be $false
     }
 }
+
+Describe 'Enable-IISApplication' {
+    It 'Remove and Should not throw' {
+        New-Item -Path TestDrive:\app_offline.htm
+        { Remove-Item -Path TestDrive:\app_offline.htm } |Should Not throw
+    }
+    It 'Test file should return false after removal' {
+        $Test = Test-Path -Path TestDrive:\app_offline.htm
+        $Test |Should Be $false
+    }
+}
