@@ -1,0 +1,74 @@
+{
+	"id": "17fda46c-ce76-4608-8a8d-08afbd1ed45b",
+	"name": "DisableIISApplication",
+	"friendlyName": "Disable IIS Application",
+	"description": "Utilizes the app_offline.htm file in ASP.NET to take a website or webapplication offline.",
+	"author": "pwshliquori",
+	"helpMarkDown": "",
+	"category": "Deploy",
+	"visibility": [
+		"Release"
+	],
+	"demands": [ ],
+	"version": {
+        "Major": "1",
+        "Minor": "0",
+        "Patch": "1"
+	},
+	"instanceNameFormat": "Disable IIS Application",
+	"inputs": [
+		{
+			"name": "filePath",
+			"type": "filePath",
+			"label": "File Path",
+			"defaultValue": "$(System.DefaultWorkingDirectory)",
+			"required": true,
+			"helpMarkDown": "Source file path to the app_offline.htm file. The file path must include the app_offline.htm file. e.g. C:/Temp/app_offline.htm"
+		},
+		{
+			"name": "targetType",
+			"type": "radio",
+			"label": "Type",
+			"defaultValue": "unc",
+			"required": false,
+			"helpMarkDown": "Target destination path: UNC path or remote computer local path.",
+			"options": {
+				"unc": "UNC Path",
+				"remoteComputer": "Remote Computer"
+			}
+		},
+		{
+			"name": "uncPath",
+			"type": "textbox",
+			"label": "UNC Path",
+			"visibleRule": "targetType = unc",
+			"required": true,
+			"defaultValue": "",
+			"helpMarkDown": "UNC path destination path to copy the app_offline.htm file."
+		},
+		{
+			"name": "computerName",
+			"type": "multiLine",
+			"label": "Computer Names:",
+			"visibleRule": "targetType = remoteComputer",
+			"required": true,
+			"helpMarkDown": "A comma separated list of remote computers to copy the app_offline.htm file to."
+		},
+		{
+			"name": "localPath",
+			"type": "textbox",
+			"label": "Local Path",
+			"visibleRule": "targetType = remoteComputer",
+			"defaultValue": "C:\\inetpub\\wwwroot",
+			"required": true,
+			"helpMarkDown": "Local folder to copy the app_offline.htm file."
+		}
+	],
+	"execution": {
+		"PowerShell3": {
+			"target": "$(currentDirectory)/Disable-IISApplication.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}
