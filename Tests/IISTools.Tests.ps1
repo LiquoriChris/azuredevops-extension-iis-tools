@@ -18,3 +18,17 @@ Describe 'Enable-IISApplication' {
         $Test |Should Be $false
     }
 }
+
+Describe 'Stop-IISApplicationPool' {
+    It 'Should create a session' {
+        New-PSSession -ComputerName localhost |Should Not BeNullOrEmpty
+    }
+    It 'Should stop the app pool' {
+        Mock -CommandName 'Get-WebAppPoolState' -MockWith {
+            return
+        }
+        Mock -CommandName 'Stop-WebAppPool' -MockWith {
+            return $null
+        }
+    }
+}
