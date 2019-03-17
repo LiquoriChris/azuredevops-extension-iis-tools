@@ -1,0 +1,42 @@
+{
+	"id": "b05f088c-8ca2-41f7-b91d-5b00207a5a90",
+	"name": "StopIISApplicationPool",
+	"friendlyName": "Stops IIS Application Pools",
+	"description": "Task will stop IIS application pools.",
+	"author": "pwshliquori",
+	"helpMarkDown": "",
+	"category": "Deploy",
+	"visibility": [
+		"Release"
+	],
+	"demands": [ ],
+	"version": {
+        "Major": "0",
+        "Minor": "0",
+        "Patch": "1"
+	},
+	"instanceNameFormat": "Stop IIS Application Pools",
+	"inputs": [
+		{
+			"name": "computerName",
+			"type": "textbox",
+			"label": "Computer Name",
+			"required": true,
+			"helpMarkDown": "IIS web server computer name"
+		},
+		{
+			"name": "appPools",
+			"type": "textbox",
+			"label": "Application Pools",
+			"required": true,
+			"helpMarkDown": "A comma separated list of IIS application pools to be stopped."
+		}
+	],
+	"execution": {
+		"PowerShell3": {
+			"target": "$(currentDirectory)/Stop-IISApplicationPool.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}
