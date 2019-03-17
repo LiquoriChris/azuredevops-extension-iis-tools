@@ -10,6 +10,7 @@ Utilizes multiple PowerShell cmdlets to interact with Microsoft IIS in the relea
 
 - DisableIISApplication: Takes a website or web application offline using the ASP.NET app_offline.htm file.
 - EnableIISApplication: Removes the ASP.NET app_offline.htm to initialize the website or web application.
+- StopIISAppPool: Stops one or more IIS application pools on a web server. 
 
 ## Note
 
