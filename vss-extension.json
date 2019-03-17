@@ -3,7 +3,7 @@
 	"id": "iis-tools",
 	"name": "IIS Tools",
 	"description": "A collection of tools to manage and interact with IIS",
-	"version": "1.0.5",
+	"version": "1.0.8",
 	"publisher": "pwshliquori",
 	"public":  false,
 	"baseUri": "https://github.com/USF-HII",
@@ -48,7 +48,8 @@
 	},
 	"files": [
 		{ "path": "Tasks/DisableIISApplication" },
-		{ "path": "Tasks/EnableIISApplication"}
+		{ "path": "Tasks/EnableIISApplication"},
+		{ "path": "Tasks/StopIISApplicationPool"}
 	],
 	"content": {
 		"details": {
@@ -77,6 +78,16 @@
 			],
 			"properties": {
 				"name": "Tasks/EnableIISApplication"
+			}
+		},
+		{
+			"id": "stop-iis-apppool",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "Tasks/StopIISApplicationPool"
 			}
 		}
 	]
