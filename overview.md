@@ -19,3 +19,7 @@ PSRemoting must be enabled to run most tasks. To find out how to enable PSRemoti
 
 - [Installing and Configuring WinRM](https://docs.microsoft.com/en-us/windows/desktop/winrm/installation-and-configuration-for-windows-remote-management)
 - [Enable-PSRemoting Cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
+
+## Contribute 
+
+Please feel free to make suggestions, improvments, and features you would like to see added to the extension.
