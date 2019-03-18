@@ -3,9 +3,9 @@
 	"id": "iis-tools",
 	"name": "IIS Tools",
 	"description": "A collection of tools to manage and interact with IIS",
-	"version": "1.1.0",
+	"version": "1.1.2",
 	"publisher": "pwshliquori",
-	"public":  false,
+	"public":  true,
 	"baseUri": "https://github.com/USF-HII",
 	"scopes": [],
 	"tags": [
