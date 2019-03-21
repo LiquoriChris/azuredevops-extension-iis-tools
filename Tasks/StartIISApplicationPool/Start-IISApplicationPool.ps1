@@ -3,11 +3,28 @@ param ()
 
 $ComputerName = Get-VstsInput -Name 'computerName'
 $AppPools = Get-VstsInput -Name 'appPools'
+$Username = Get-VstsInput -Name 'userName'
+$Password = Get-VstsInput -Name 'password'
+$Authentication = Get-VstsInput -Name 'authentication'
+$ConfigurationName = Get-VstsInput -Name 'configurationName'
 
 . $PSScriptRoot\HelperFunctions.ps1
 
 $AppPoolName = Split-ApplicationPoolName -Name $AppPools
-$Session = New-PSSession -ComputerName $ComputerName
+$Params = @{
+    ComputerName = $ComputerName
+}
+if ($Authentication) {
+    $Params.Authentication = $Authentication
+}
+if ($Username -and $Password) {
+    $Credential = _Credential -Username $Username -Password $Password
+    $Params.Credential = $Credential
+}
+if ($ConfigurationName) { 
+    $Params.ConfigurationName = $ConfigurationName
+}
+$Session = New-Session @Params
 $Result = foreach ($AppPool in $AppPoolName) {
     Invoke-Command -Session $Session -ScriptBlock {
         Try {
@@ -34,3 +51,4 @@ $Result = foreach ($AppPool in $AppPoolName) {
 }
 
 return $Result |Select-Object -Property * -ExcludeProperty PSComputerName,RunspaceId
+Remove-Session -ComputerName $ComputerName

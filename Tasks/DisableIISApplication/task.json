@@ -12,7 +12,7 @@
 	"demands": [ ],
 	"version": {
         "Major": "1",
-        "Minor": "1",
+        "Minor": "2",
         "Patch": "0"
 	},
 	"instanceNameFormat": "Disable IIS Application",
@@ -21,7 +21,7 @@
 			"name": "filePath",
 			"type": "filePath",
 			"label": "File Path",
-			"defaultValue": "$(System.DefaultWorkingDirectory)",
+			"defaultValue": "$(System.DefaultWorkingDirectory)\\app_offline.htm",
 			"required": true,
 			"helpMarkDown": "Source file path to the app_offline.htm file. The file path must include the app_offline.htm file. e.g. C:/Temp/app_offline.htm"
 		},
@@ -62,6 +62,34 @@
 			"defaultValue": "C:\\inetpub\\wwwroot",
 			"required": true,
 			"helpMarkDown": "Local folder to copy the app_offline.htm file."
+		},
+		{
+			"name": "userName",
+			"type": "textbox",
+			"label": "Admin Username",
+			"visibleRule": "targetType = remoteComputer",
+			"helpMarkDown": "Administrator username to run on the remote computer."
+		},
+		{
+			"name": "password",
+			"type": "textbox",
+			"label": "Password",
+			"visibleRule": "targetType = remoteComputer",
+			"helpMarkDown": "Administrator password to run on the remote computer."
+		},
+		{
+			"name": "authentication",
+			"type": "textbox",
+			"label": "Authentication",
+			"visibleRule": "targetType = remoteComputer",
+			"helpMarkDown": "Authentication method to be use to run Invoke-Command. e.g. CredSSP"
+		},
+		{
+			"name": "configurationName",
+			"type": "textbox",
+			"label": "Configuration Name",
+			"visibleRule": "targetType = remoteComputer",
+			"helpMarkDown": "PSSession Configuration name if using a custom configuration or JEA Constrained Endpoint."
 		}
 	],
 	"execution": {
