@@ -23,3 +23,8 @@ PSRemoting must be enabled to run most tasks. To find out how to enable PSRemoti
 ## Contribute 
 
 Please feel free to make suggestions, improvments, and features you would like to see added to the extension.
+
+## Changelog:
+
+Version 1.2
+- Add authentication and PSSession configuration options
