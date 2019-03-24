@@ -13,6 +13,30 @@ Utilizes multiple PowerShell cmdlets to interact with Microsoft IIS in the relea
 - StopIISAppPool: Stops one or more IIS application pools on a web server. 
 - StartIISAppPool: Starts one or more IIS application pools on a web server.
 
+## Using JEA Endpoints
+
+If using Just Enough Administration (JEA), you must include language mode in your PSSession Configuration file. In the PSSession Role Capabilities file, please include the following:
+
+Modules:
+- ModulesToImport = 'WebAdministration'
+
+Cmdlets:
+- 'Get-WebAppPoolState'
+- 'Start-WebAppPool'
+- 'Stop-WebAppPool'
+- 'Get-ChildItem'
+- 'Start-Sleep'
+- 'Copy-Item'
+- 'Remove-Item'
+- 'Write-Error'
+- 'Out-Null'
+
+Providers:
+- 'Variable'
+- 'WebAdministration'
+
+This will allow the JEA Endpoint to run successfully when using tasks. 
+
 ## Note
 
 PSRemoting must be enabled to run most tasks. To find out how to enable PSRemoting in your organization, please read Microsoft's official documentation.
