@@ -28,7 +28,9 @@ $Session = New-Session @Params
 $Result = foreach ($AppPool in $AppPoolName) {
     Invoke-Command -Session $Session -ScriptBlock {
         Try {
-            Import-Module WebAdministration -Force
+            if (!$using:ConfigurationName) {
+                Import-Module WebAdministration -Force
+            }
             Get-ChildItem -Path IIS:\AppPools\$using:AppPool -ErrorAction Stop |Out-Null
             Try {
                 Stop-WebAppPool -Name $using:AppPool -ErrorAction Stop
