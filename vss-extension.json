@@ -6,7 +6,7 @@
 	"version": "1.2.1",
 	"publisher": "pwshliquori",
 	"public":  true,
-	"baseUri": "https://github.com/USF-HII",
+	"baseUri": "https://github.com/pwshliquori",
 	"scopes": [],
 	"tags": [
 		"git",
@@ -15,21 +15,21 @@
 	],
 	"links": {
 		"home": {
-			"uri": "https://github.com/USF-HII/azuredevops-extension-iis-tools"
+			"uri": "https://github.com/pwshliquori/azuredevops-extension-iis-tools"
 		},
 		"learn": {
-			"uri": "https://github.com/USF-HII/azuredevops-extension-iis-tools"
+			"uri": "https://github.com/pwshliquori/azuredevops-extension-iis-tools"
 		},
 		"support": {
-			"uri": "https://github.com/USF-HII/azuredevops-extension-iis-tools/issues"
+			"uri": "https://github.com/pwshliquori/azuredevops-extension-iis-tools/issues"
 		},
 		"repository": {
-			"uri": "https://github.com/USF-HII/azuredevops-extension-iis-tools"
+			"uri": "https://github.com/pwshliquori/azuredevops-extension-iis-tools"
 		}
 	},
 	"repository": {
 		"type": "git",
-		"uri": "https://github.com/USF-HII/azuredevops-extension-iis-tools"
+		"uri": "https://github.com/pwshliquori/azuredevops-extension-iis-tools"
 	},
 	"branding": {
 		"color": "rgb(0, 114, 186)",
