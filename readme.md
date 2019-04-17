@@ -1,3 +1,7 @@
+# Notice
+
+All future development will be done under a new publisher. You will need to remove the current extension and add it back into your organization. I apologize for any inconvenience.
+
 # IIS Tools (Azure DevOps Extension)
 
 A collection of tools to manage and interact with Microsoft IIS.
