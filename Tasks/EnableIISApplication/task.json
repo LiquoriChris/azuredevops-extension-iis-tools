@@ -1,5 +1,5 @@
 {
-	"id": "5504e71c-c41a-41d3-895e-eaf8f1e8c4de",
+	"id": "b11415fa-42bf-4443-a1f8-00152d183041",
 	"name": "EnableIISApplication",
 	"friendlyName": "Enable IIS Application",
 	"description": "Remove the app_offline.htm from a file location.",

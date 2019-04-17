@@ -4,7 +4,7 @@
 	"name": "IIS Tools",
 	"description": "A collection of tools to manage and interact with IIS",
 	"version": "1.2.2",
-	"publisher": "pwshliquori",
+	"publisher": "liquorichris",
 	"public":  true,
 	"baseUri": "https://github.com/pwshliquori",
 	"scopes": [],
